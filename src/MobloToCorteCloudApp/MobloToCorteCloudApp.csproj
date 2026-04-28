@@ -6,9 +6,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IncrementVersionOnBuild>yyyy.MM.ddH.mmss</IncrementVersionOnBuild>
-		<Version>2026.4.2820.2640</Version>
+		<Version>2026.4.2820.5439</Version>
 		<ApplicationIcon>icone2.ico</ApplicationIcon>
 		<AssemblyName>MobloToCorteCloud</AssemblyName>
+		<Copyright>Copyright © 2026 Armindo Gomes</Copyright>
+		<Authors>Armindo Gomes</Authors>
 	</PropertyGroup>
 
 	<ItemGroup>
