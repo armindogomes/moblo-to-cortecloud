@@ -1,0 +1,44 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@a66eefa2bf2572fc311ea6ff65a7b6ecc4df96a6 # v4
+      with:
+        dotnet-version: '10.0.x'
+        
+    - name: Restore dependencies
+      working-directory: src/MobloToCorteCloud
+      run: dotnet restore -r win-x64
+
+    - name: Build
+      working-directory: src/MobloToCorteCloud
+      run: dotnet build -c Release -r win-x64 --no-restore
+
+    - name: Publish
+      working-directory: src/MobloToCorteCloud
+      run: dotnet publish -c Release -r win-x64 --no-self-contained -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --output ./publish --no-build
+      
+    - name: Create ZIP
+      run: Compress-Archive -Path src/MobloToCorteCloud/publish/*.exe -DestinationPath MobloToCorteCloud-${{ github.ref_name }}.zip
+      shell: pwsh
+      
+    - name: Create Release
+      uses: softprops/action-gh-release@569deb874d08cd8cc0aa24af7c0b21160fe4b0e4 # v1
+      with:
+        files: ProcessSentinel-${{ github.ref_name }}.zip
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}service, privacy policy, and support
