@@ -1,8 +1,8 @@
-using MobloToCorteCloud.Models;
+using MobloToCorteCloudApp.Models;
 using System.Globalization;
 using System.Text;
 
-namespace MobloToCorteCloud.Services;
+namespace MobloToCorteCloudApp.Services;
 
 internal class ClipboardService {
     public void CopyToClipboard(List<ExcelRecord> records) {

@@ -1,9 +1,9 @@
 using CsvHelper;
 using CsvHelper.Configuration;
-using MobloToCorteCloud.Models;
+using MobloToCorteCloudApp.Models;
 using System.Globalization;
 
-namespace MobloToCorteCloud.Services;
+namespace MobloToCorteCloudApp.Services;
 
 internal class CsvReaderService {
 	public List<CsvRecord> ReadCsvFile(string filePath) {

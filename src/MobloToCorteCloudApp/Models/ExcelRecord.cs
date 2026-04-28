@@ -1,4 +1,4 @@
-namespace MobloToCorteCloud.Models;
+namespace MobloToCorteCloudApp.Models;
 
 internal class ExcelRecord {
 	public int Quantidade { get; set; }

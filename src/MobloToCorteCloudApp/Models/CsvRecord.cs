@@ -1,6 +1,6 @@
 using CsvHelper.Configuration.Attributes;
 
-namespace MobloToCorteCloud.Models;
+namespace MobloToCorteCloudApp.Models;
 
 internal class CsvRecord {
 	public string Group { get; set; } = string.Empty;

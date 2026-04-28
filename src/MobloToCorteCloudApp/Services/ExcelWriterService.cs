@@ -1,7 +1,7 @@
 using ClosedXML.Excel;
-using MobloToCorteCloud.Models;
+using MobloToCorteCloudApp.Models;
 
-namespace MobloToCorteCloud.Services;
+namespace MobloToCorteCloudApp.Services;
 
 internal class ExcelWriterService {
 	public void WriteExcelFile(List<ExcelRecord> records, string outputPath) {

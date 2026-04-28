@@ -1,7 +1,7 @@
-using MobloToCorteCloud.Models;
+using MobloToCorteCloudApp.Models;
 using static System.String;
 
-namespace MobloToCorteCloud.Services;
+namespace MobloToCorteCloudApp.Services;
 
 internal class ConverterService {
 

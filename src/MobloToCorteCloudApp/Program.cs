@@ -1,4 +1,4 @@
-﻿using MobloToCorteCloud.Services;
+﻿using MobloToCorteCloudApp.Services;
 using System.Reflection;
 
 var version = Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "1.0.0";
@@ -7,7 +7,7 @@ Console.WriteLine("=== Conversor CSV Moblo para Excel Corte Cloud ===\n");
 
 if (args.Length == 0) {
 	Console.WriteLine("Erro: Nenhum arquivo CSV foi fornecido.");
-	Console.WriteLine("Uso: MobloToCorteCloud.exe <caminho-do-arquivo-csv>");
+	Console.WriteLine("Uso: MobloToCorteCloudApp.exe <caminho-do-arquivo-csv>");
 	Console.WriteLine("\nPressione qualquer tecla para sair...");
 	Console.ReadKey();
 	return;
