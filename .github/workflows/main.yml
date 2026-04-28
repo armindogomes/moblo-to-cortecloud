@@ -38,7 +38,7 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@569deb874d08cd8cc0aa24af7c0b21160fe4b0e4 # v1
       with:
-        files: ProcessSentinel-${{ github.ref_name }}.zip
+        files: MobloToCorteCloud-${{ github.ref_name }}.zip
         generate_release_notes: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}service, privacy policy, and support
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
