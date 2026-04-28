@@ -8,7 +8,7 @@
 		<IncrementVersionOnBuild>yyyy.MM.ddH.mmss</IncrementVersionOnBuild>
 		<Version>2026.4.2820.2640</Version>
 		<ApplicationIcon>icone2.ico</ApplicationIcon>
-		<AssemblyName>MobloToCorteCloud-$(Version)</AssemblyName>
+		<AssemblyName>MobloToCorteCloud</AssemblyName>
 	</PropertyGroup>
 
 	<ItemGroup>
