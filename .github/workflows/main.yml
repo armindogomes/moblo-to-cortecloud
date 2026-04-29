@@ -20,25 +20,25 @@ jobs:
         dotnet-version: '10.0.x'
         
     - name: Restore dependencies
-      working-directory: src/MobloToCorteCloud
+      working-directory: src/MobloToCorteCloudApp
       run: dotnet restore -r win-x64
 
     - name: Build
-      working-directory: src/MobloToCorteCloud
+      working-directory: src/MobloToCorteCloudApp
       run: dotnet build -c Release -r win-x64 --no-restore
 
     - name: Publish
-      working-directory: src/MobloToCorteCloud
+      working-directory: src/MobloToCorteCloudApp
       run: dotnet publish -c Release -r win-x64 --no-self-contained -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --output ./publish --no-build
       
     - name: Create ZIP
-      run: Compress-Archive -Path src/MobloToCorteCloud/publish/*.exe -DestinationPath MobloToCorteCloud-${{ github.ref_name }}.zip
+      run: Compress-Archive -Path src/MobloToCorteCloudApp/publish/*.exe -DestinationPath MobloToCorteCloudApp-${{ github.ref_name }}.zip
       shell: pwsh
       
     - name: Create Release
       uses: softprops/action-gh-release@569deb874d08cd8cc0aa24af7c0b21160fe4b0e4 # v1
       with:
-        files: MobloToCorteCloud-${{ github.ref_name }}.zip
+        files: MobloToCorteCloudApp-${{ github.ref_name }}.zip
         generate_release_notes: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
