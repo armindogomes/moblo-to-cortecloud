@@ -44,7 +44,7 @@ internal class ConverterService {
 			_ when partLower.StartsWith("bse ") => (OK, Empty, OK, OK),
 			_ when partLower.StartsWith("fnd ") => (Empty, Empty, Empty, Empty),
 			_ when partLower.StartsWith("div ") => (OK, Empty, Empty, Empty),
-			_ when partLower.StartsWith("srf") => (Empty, Empty, Empty, Empty),
+			_ when partLower.StartsWith("srf ") => (Empty, Empty, Empty, Empty),
 			_ => (OK, OK, OK, OK)
 		};
 	}
